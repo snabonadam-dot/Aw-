@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Awɛ (My God) · Salma A.D. Nabonadam | African Fusion Anthem</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0A0806;
+      font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+      color: #F5EFE0;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Gold + Black + Pink + White Theme */
+    :root {
+      --gold: #D4AF37;
+      --gold-dark: #B48C2E;
+      --gold-glow: rgba(212, 175, 55, 0.25);
+      --pink: #FF99C8;
+      --pink-deep: #F26B9E;
+      --black-deep: #050302;
+      --black-soft: #0F0D0B;
+      --cream: #FDF8F0;
+      --white-pure: #FFFFFF;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+    h1, h2, h3, .title-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Background texture */
+    .bg-gold-dust {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -2;
+      background: radial-gradient(circle at 30% 20%, rgba(212,175,55,0.08), transparent 70%),
+                  repeating-linear-gradient(45deg, rgba(212,175,55,0.02) 0px, rgba(212,175,55,0.02) 2px, transparent 2px, transparent 8px);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Navigation */
+    nav {
+      padding: 1.2rem 2rem;
+      background: rgba(5, 3, 2, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, var(--gold), #FFD966, var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      padding: 5rem 2rem 6rem;
+      min-height: 90vh;
+    }
+
+    .cover-art {
+      flex: 1;
+      min-width: 280px;
+      max-width: 460px;
+      border-radius: 32px;
+      box-shadow: 0 30px 45px -15px rgba(0,0,0,0.8), 0 0 0 2px rgba(212,175,55,0.4), 0 0 0 6px rgba(0,0,0,0.5);
+      transition: transform 0.35s ease;
+    }
+
+    .cover-art img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 28px;
+      background: #2a241e;
+    }
+
+    .cover-art:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .pre-title {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-weight: 500;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .song-title {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #FFFFFF, var(--gold), var(--pink));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .song-sub {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+
+    .artist-name {
+      font-size: 1.3rem;
+      margin: 1rem 0 1.2rem;
+      border-left: 4px solid var(--pink);
+      padding-left: 1rem;
+    }
+
+    .artist-name span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .description {
+      color: #ccc5bc;
+      max-width: 550px;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), #C9A03D);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #0a0a0a;
+      cursor: pointer;
+      transition: 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+      text-decoration: none;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #E8C45C, var(--gold-dark));
+      box-shadow: 0 10px 20px rgba(212,175,55,0.5);
+    }
+
+    .btn-outline-pink {
+      background: transparent;
+      border: 2px solid var(--pink);
+      color: var(--pink);
+      padding: 0.85rem 1.9rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline-pink:hover {
+      background: var(--pink);
+      color: #0a0a0a;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    .section-alt {
+      background: var(--black-soft);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--pink));
+      margin: 0.8rem auto 0;
+      border-radius: 3px;
+    }
+
+    /* Quote / About Section */
+    .about-text {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote-block {
+      background: linear-gradient(145deg, #12100d, #080706);
+      border-left: 5px solid var(--gold);
+      padding: 2rem;
+      border-radius: 24px;
+      margin: 2rem 0;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Music Player - Coming Soon */
+    .player-card {
+      background: #0C0A08;
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      border: 1px solid rgba(212, 175, 55, 0.5);
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .coming-soon-badge {
+      background: linear-gradient(135deg, rgba(212,175,55,0.2), rgba(255,153,200,0.15));
+      border-radius: 60px;
+      padding: 0.6rem 1.8rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--gold);
+    }
+
+    .coming-soon-badge span {
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .wave-bars {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .wave {
+      width: 8px;
+      height: 35px;
+      background: linear-gradient(to top, var(--gold), var(--pink));
+      border-radius: 4px;
+      animation: waveAnim 0.9s infinite alternate ease;
+    }
+
+    @keyframes waveAnim {
+      0% { height: 18px; opacity: 0.5; }
+      100% { height: 52px; opacity: 1; }
+    }
+    .wave:nth-child(2) { animation-delay: 0.2s; }
+    .wave:nth-child(3) { animation-delay: 0.4s; }
+    .wave:nth-child(4) { animation-delay: 0.1s; }
+    .wave:nth-child(5) { animation-delay: 0.3s; }
+
+    .release-note {
+      margin-top: 1.2rem;
+      font-size: 0.95rem;
+      color: #c9b68b;
+    }
+
+    .youtube-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(212, 175, 55, 0.15);
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      text-decoration: none;
+      color: var(--gold);
+      font-weight: 600;
+      transition: 0.2s;
+      margin-top: 1.2rem;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+
+    .youtube-link:hover {
+      background: var(--gold);
+      color: #0a0a0a;
+      transform: translateY(-2px);
+    }
+
+    /* Genre Tags */
+    .genre-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .genre-tag {
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    /* Contact Section */
+    .contact-card {
+      background: linear-gradient(145deg, #12100C, #070604);
+      border-radius: 48px;
+      padding: 3rem 2rem;
+      text-align: center;
+      border: 1px solid rgba(212,175,55,0.4);
+    }
+
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(212, 175, 55, 0.12);
+      padding: 0.9rem 2rem;
+      border-radius: 60px;
+      margin: 1.2rem 0;
+      font-size: 1.1rem;
+      border: 1px solid rgba(212,175,55,0.3);
+    }
+
+    .contact-email a {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-email a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #030201;
+      padding: 2.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(212, 175, 55, 0.3);
+      color: #b9aa8c;
+    }
+
+    .social-single {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .youtube-footer {
+      color: var(--gold);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 500;
+      transition: 0.2s;
+    }
+
+    .youtube-footer:hover {
+      color: var(--pink);
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        padding: 3rem 1rem 4rem;
+      }
+      .hero-text {
+        text-align: center;
+      }
+      .song-title {
+        font-size: 3rem;
+      }
+      .song-sub {
+        font-size: 1.3rem;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .container {
+        padding: 0 1.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .contact-email {
+        font-size: 0.9rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="bg-gold-dust"></div>
+
+<nav>
+  <div class="nav-inner">
+    <div class="logo">✦ AWƐ (MY GOD) ✦</div>
+    <ul class="nav-links">
+      <li><a href="#music">LISTEN</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#connect">CONNECT</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="hero">
+      <div class="cover-art">
+        <img src="cover art.png" alt="Awɛ (My God) cover art - Woman holding glowing heart, man holding brain, gold African symbolism" onerror="this.onerror=null; this.src='https://placehold.co/900x900/1a130c/D4AF37?text=AWƐ+COVER+ART'; this.style.background='#0a0a0a'">
+      </div>
+      <div class="hero-text">
+        <div class="pre-title">✦ OFFICIAL DEBUT SINGLE ✦</div>
+        <h1 class="song-title">Awɛ</h1>
+        <div class="song-sub">(My God)</div>
+        <div class="artist-name">Salma <span>A.D. Nabonadam</span></div>
+        <p class="description">"Awɛ" means God in Kasem — a spiritual Afro-fusion anthem blending Amapiano log drums, Afrobeats melodies, and Afro-jazz sophistication. Rooted in Ghanaian dialect, this track honors divine trust and African identity.</p>
+        <div class="btn-group">
+          <a href="https://www.youtube.com/@sadn.1-rich" target="_blank" class="btn-gold" style="text-decoration: none;">▶ SUBSCRIBE ON YOUTUBE</a>
+          <a href="#music" class="btn-outline-pink">COMING SOON</a>
+        </div>
+        <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+          <span style="color: var(--pink);">#AwɛMyGod</span>
+          <span style="color: var(--gold);">#AfricanFusion</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MUSIC + COMING SOON SECTION -->
+  <div id="music" class="section">
+    <div class="container">
+      <h2 class="section-title">LISTEN TO "AWƐ (MY GOD)"</h2>
+      <div class="player-card">
+        <div class="coming-soon-badge">
+          <span>🎵 COMING SOON 🎵</span>
+        </div>
+        <div class="wave-bars">
+          <div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div><div class="wave"></div>
+        </div>
+        <div class="genre-tags">
+          <span class="genre-tag">Amapiano</span>
+          <span class="genre-tag">Afrobeats</span>
+          <span class="genre-tag">Afro-jazz</span>
+          <span class="genre-tag">Ghanaian Dialect</span>
+        </div>
+        <p class="release-note">✨ The single is currently in production and will be released soon on all major platforms.<br>Stay tuned for the full experience — a fusion crafted for the culture.</p>
+        <a href="https://www.youtube.com/@sadn.1-rich" target="_blank" class="youtube-link">
+          🔔 SUBSCRIBE ON YOUTUBE 🔔
+        </a>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">Be the first to hear "Awɛ" when it drops — follow on YouTube for updates</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT SECTION - Clean and focused -->
+  <div id="about" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">ABOUT THE MUSIC</h2>
+      <div class="about-text">
+        <div class="quote-block">
+          <p>“Awɛ (My God) is a prayer, a celebration, and a homecoming. This song blends the soulful depth of Afro-jazz, the danceable energy of Amapiano, and the timeless catchiness of Afrobeats. Rooted in my Ghanaian heritage, I wanted to create something that speaks to the spirit while moving the body.”</p>
+          <p style="margin-top: 1rem; font-style: normal; font-weight: 500;">— Salma A.D. Nabonadam</p>
+        </div>
+        <p style="margin-top: 1.5rem;">"Awɛ" means God in Kasem, a language spoken in parts of Ghana and Burkina Faso. The title reflects a core African belief in trusting God with life's path, struggles, and outcomes. Through this fusion of contemporary African sounds, I aim to honor tradition while pushing boundaries — making music that is both deeply personal and universally resonant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONNECT SECTION -->
+  <div id="connect" class="section">
+    <div class="container">
+      <div class="contact-card">
+        <h2 style="font-size: 2.2rem; color: var(--gold); margin-bottom: 0.5rem;">✧ CONNECT WITH SALMA ✧</h2>
+        <p style="margin-bottom: 1rem;">Stay updated on "Awɛ (My God)" — be the first to know when the song drops.</p>
+        
+        <div class="contact-email">
+          📧 <a href="mailto:salmanabonadam@gmail.com">salmanabonadam@gmail.com</a>
+        </div>
+        
+        <form id="mailForm" onsubmit="alert('✅ Ayekoo! You’re now part of the Awɛ journey. You\'ll be notified when the song releases.'); return false;">
+          <input type="email" placeholder="Your email address" style="padding: 1rem 1.5rem; border-radius: 60px; border: none; width: 280px; max-width: 70%; background: #1F1B16; color: white; margin-right: 0.5rem; margin-bottom: 1rem;" required>
+          <button type="submit" class="btn-gold" style="padding: 0.9rem 1.8rem;">Subscribe for Updates</button>
+        </form>
+        
+        <div style="margin-top: 2rem;">
+          <a href="https://www.youtube.com/@sadn.1-rich" target="_blank" class="youtube-link" style="background: rgba(212,175,55,0.2);">
+            ▶️ SUBSCRIBE ON YOUTUBE
+          </a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.85rem;">🎤 For bookings, collaborations, and press inquiries: <strong>salmanabonadam@gmail.com</strong></p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Salma A.D. Nabonadam — “Awɛ (My God)” · All rights reserved.</p>
+  <div class="social-single">
+    <a href="https://www.youtube.com/@sadn.1-rich" target="_blank" class="youtube-footer">
+      ▶️ Subscribe on YouTube · @sadn.1-rich
+    </a>
+  </div>
+  <p style="margin-top: 0.8rem; font-size: 0.8rem;">✦ A fusion of Amapiano, Afrobeats & Afro-jazz rooted in Kasem language and Ghanaian spirit ✦</p>
+</footer>
+
+<script>
+  // Smooth fade on scroll
+  const fadeElements = document.querySelectorAll('.section, .hero');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0px)';
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
+    obs.observe(el);
+  });
+  window.addEventListener('load', () => {
+    fadeElements.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  });
+</script>
+</body>
+</html>
